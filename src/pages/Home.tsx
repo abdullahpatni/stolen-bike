@@ -13,6 +13,8 @@ function Home() {
   const [page, setPage] = useState(1);
   const [data, setData] = useState(bikeData.slice(firstIndex, pageSize));
 
+  const [searchValue, setSearchValue] = useState("");
+
   useEffect(() => {
     setData(bikeData.slice(0, pageSize));
   }, [pageSize, bikeData]);
@@ -27,6 +29,13 @@ function Home() {
       });
   }, []);
 
+  useEffect(() => {
+    const newPacientes = data.filter((value: any) =>
+      value.title.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+    setData(newPacientes);
+  }, [searchValue]);
+
   const changeWidth = (e: any) => {
     setPageSize(parseInt(e.target.value, 10));
   };
@@ -38,11 +47,21 @@ function Home() {
 
   return (
     <div style={{ margin: "5em" }}>
+      <TextField
+        id="outlined-basic"
+        label="Title"
+        variant="outlined"
+        value={searchValue}
+        type="text"
+        onChange={(e) => setSearchValue(e.target.value)}
+        placeholder="Search by Title"
+        fullWidth
+      />
       <ul>
         {data.map((bike) => {
           return (
-            <li>
-              <BikeCard key={bike?.id} bike={bike} />
+            <li key={bike?.id}>
+              <BikeCard bike={bike} />
             </li>
           );
         })}
