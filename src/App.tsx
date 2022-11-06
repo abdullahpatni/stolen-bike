@@ -1,7 +1,6 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
@@ -9,6 +8,7 @@ function App() {
       <header className="App-header">
         <ResponsiveAppBar />
       </header>
+      <AppRoutes />
     </div>
   );
 }

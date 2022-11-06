@@ -32,6 +32,7 @@
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": "off",
-    "no-bitwise": "off"
+    "no-bitwise": "off",
+    "react/destructuring-assignment": "off"
   }
 }

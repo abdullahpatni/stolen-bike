@@ -16,12 +16,8 @@ import AdbIcon from "@mui/icons-material/Adb";
 const pages = ["SEARCH BIKES", "BLOG", "HELP"];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null,
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null,
-  );
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -35,7 +31,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ padding: "0 4em" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <a className="primary-logo" href="www.google.com">
@@ -97,10 +93,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  alt="Abdullah Patni"
-                  src="/static/images/avatar/2.jpg"
-                />
+                <Avatar alt="Abdullah Patni" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
           </Box>
