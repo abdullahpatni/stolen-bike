@@ -25,7 +25,7 @@ function BikeCard(props: { bike: any }) {
       <CardMedia component="img" sx={{ width: 200 }} image={bike?.large_img} alt={bike?.title} />
       <Box sx={{ display: "flex", flexDirection: "column", marginLeft: "2em" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
+          <Typography component="div" variant="h5" sx={{ color: "#1976d2" }}>
             {bike?.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">

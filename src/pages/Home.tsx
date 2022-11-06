@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
+import { Grid } from "@mui/material";
 import BikeCard from "../components/BikeCard";
 
 function Home() {
@@ -23,11 +24,9 @@ function Home() {
       )
       .then((response: any) => {
         setbikeData(response.data.bikes);
-        // console.log(response.data.bikes);
       });
   }, []);
 
-  // Change width
   const changeWidth = (e: any) => {
     setPageSize(parseInt(e.target.value, 10));
   };
@@ -43,24 +42,27 @@ function Home() {
         return <BikeCard key={bike?.id} bike={bike} />;
       })}
 
-      <Stack alignItems="center" sx={{ marginBottom: "1em" }}>
-        <Pagination
-          count={Math.ceil(bikeData.length / pageSize)}
-          page={page}
-          color="primary"
-          onChange={handleChange}
-        />
-      </Stack>
-
-      <TextField
-        id="outlined-basic"
-        label="Outlined"
-        variant="outlined"
-        value={pageSize}
-        type="number"
-        onChange={changeWidth}
-        fullWidth
-      />
+      <Grid container alignItems="center" sx={{ marginBottom: "1em" }}>
+        <Grid item xs={2}>
+          <TextField
+            id="outlined-basic"
+            label="Outlined"
+            variant="outlined"
+            value={pageSize}
+            type="number"
+            onChange={changeWidth}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={8}>
+          <Pagination
+            count={Math.ceil(bikeData.length / pageSize)}
+            page={page}
+            color="primary"
+            onChange={handleChange}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }
