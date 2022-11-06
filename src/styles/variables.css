@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: brown;
+  --main-bg-color: #1976d2;
+  --light-grey: #80808014;
 
   /* Sizes */
   --main-padding: 5em;

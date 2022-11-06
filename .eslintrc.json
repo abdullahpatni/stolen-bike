@@ -33,6 +33,7 @@
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": "off",
     "no-bitwise": "off",
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }

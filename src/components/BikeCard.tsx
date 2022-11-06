@@ -17,11 +17,11 @@ function BikeCard(props: { bike: any }) {
 
   useEffect(() => {
     getStolenDate();
-  }, []);
+  });
 
   const theme = useTheme();
   return (
-    <Card sx={{ display: "flex", marginBottom: "2em" }}>
+    <Card sx={{ display: "flex", marginBottom: "2em" }} className="Card_Container">
       <CardMedia component="img" sx={{ width: 200 }} image={bike?.large_img} alt={bike?.title} />
       <Box sx={{ display: "flex", flexDirection: "column", marginLeft: "2em" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
