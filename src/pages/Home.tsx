@@ -38,9 +38,15 @@ function Home() {
 
   return (
     <div style={{ margin: "5em" }}>
-      {data.map((bike) => {
-        return <BikeCard key={bike?.id} bike={bike} />;
-      })}
+      <ul>
+        {data.map((bike) => {
+          return (
+            <li>
+              <BikeCard key={bike?.id} bike={bike} />
+            </li>
+          );
+        })}
+      </ul>
 
       <Grid container alignItems="center" sx={{ marginBottom: "1em" }}>
         <Grid item xs={2}>
