@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-import { Grid } from "@mui/material";
+import { Chip, Grid } from "@mui/material";
 import BikeCard from "../components/BikeCard";
 
 function Home() {
@@ -12,6 +12,7 @@ function Home() {
   const [pageSize, setPageSize] = useState(25);
   const [page, setPage] = useState(1);
   const [data, setData] = useState(bikeData.slice(firstIndex, pageSize));
+  const [totalCount, setTotalCount] = useState(data.length);
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -26,6 +27,7 @@ function Home() {
       )
       .then((response: any) => {
         setbikeData(response.data.bikes);
+        setTotalCount(response.data.bikes.length);
       });
   }, []);
 
@@ -34,6 +36,7 @@ function Home() {
       value.title.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setData(newPacientes);
+    setTotalCount(newPacientes.length);
   }, [searchValue]);
 
   const changeWidth = (e: any) => {
@@ -47,16 +50,23 @@ function Home() {
 
   return (
     <div style={{ margin: "5em" }}>
-      <TextField
-        id="outlined-basic"
-        label="Title"
-        variant="outlined"
-        value={searchValue}
-        type="text"
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Search by Title"
-        fullWidth
-      />
+      <Grid container alignItems="center" sx={{ marginBottom: "1em", justifyContent: "space-between" }}>
+        <Grid item xs={8}>
+          <TextField
+            id="outlined-basic"
+            label="Title"
+            variant="outlined"
+            value={searchValue}
+            type="text"
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Search by Title"
+            fullWidth
+          />
+        </Grid>
+        <Grid item>
+          <Chip label={totalCount} color="primary" variant="outlined" />
+        </Grid>
+      </Grid>
       <ul>
         {data.map((bike) => {
           return (
