@@ -36,8 +36,9 @@
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
     "format": "prettier --write .",
-    "predeploy": "npm run build",
+    "predeploy": "env-cmd -e production npm run build",
     "deploy": "gh-pages -d build"
+    
   },
   "eslintConfig": {
     "extends": [
