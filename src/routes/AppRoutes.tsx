@@ -7,7 +7,7 @@ function AppRoutes() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/stolen-bike" element={<Home />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
