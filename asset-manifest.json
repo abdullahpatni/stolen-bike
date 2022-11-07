@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/stolen-bike/static/css/main.aa0b7890.css",
+    "main.js": "/stolen-bike/static/js/main.1f13e0d8.js",
+    "static/js/787.b3ce9992.chunk.js": "/stolen-bike/static/js/787.b3ce9992.chunk.js",
+    "index.html": "/stolen-bike/index.html",
+    "main.aa0b7890.css.map": "/stolen-bike/static/css/main.aa0b7890.css.map",
+    "main.1f13e0d8.js.map": "/stolen-bike/static/js/main.1f13e0d8.js.map",
+    "787.b3ce9992.chunk.js.map": "/stolen-bike/static/js/787.b3ce9992.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa0b7890.css",
+    "static/js/main.1f13e0d8.js"
+  ]
+}
